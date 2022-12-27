@@ -7,7 +7,7 @@ function Nav(){
 
         <ul className="flex-row">
             <li className="mx-2">
-                About Me
+                <a href="#about">About Me</a>
             </li>
 
             <li className="mx-2">
@@ -19,7 +19,7 @@ function Nav(){
             </li>
 
             <li className="mx-2">
-                Contatc
+                Contact
             </li>
         </ul>
     </header>
