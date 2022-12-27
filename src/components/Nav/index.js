@@ -23,7 +23,7 @@ function Nav(props){
             </li>
 
             <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-                <a href="#contact" onClick={(()=>setContactSelected(true))}>Contact Me</a>
+                <span onClick={(()=>setContactSelected(true))}>Contact Me</span>
             </li>
         </ul>
     </header>
