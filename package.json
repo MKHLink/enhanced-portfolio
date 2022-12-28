@@ -1,8 +1,8 @@
 {
+  "homepage": "https://mkhlink.github.io/enhanced-portfolio",
   "name": "enhanced-portfolio",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "http://mkhlink.github.io/enhanced_portfolio",
+  "private": false,
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
