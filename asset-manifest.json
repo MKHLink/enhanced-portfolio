@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/enhanced_portfolio/static/css/main.67d2c7a3.css",
+    "main.js": "/enhanced_portfolio/static/js/main.c34be2a0.js",
+    "static/js/787.e44c9c25.chunk.js": "/enhanced_portfolio/static/js/787.e44c9c25.chunk.js",
+    "static/media/PFP.jpg": "/enhanced_portfolio/static/media/PFP.7830d3b27c5014e11e25.jpg",
+    "static/media/manager.png": "/enhanced_portfolio/static/media/manager.da39ea185435da80ba94.png",
+    "static/media/customer.jpg": "/enhanced_portfolio/static/media/customer.c734e4226a24d07e2bff.jpg",
+    "static/media/database.jpg": "/enhanced_portfolio/static/media/database.8203b57efa440c715a17.jpg",
+    "static/media/Bank.jpg": "/enhanced_portfolio/static/media/Bank.dc8dcbb825e75d87c887.jpg",
+    "static/media/stock.jpg": "/enhanced_portfolio/static/media/stock.5f290d120ff09ea4292d.jpg",
+    "static/media/calculator.jpg": "/enhanced_portfolio/static/media/calculator.3fc46275bb12efeff3a5.jpg",
+    "index.html": "/enhanced_portfolio/index.html",
+    "main.67d2c7a3.css.map": "/enhanced_portfolio/static/css/main.67d2c7a3.css.map",
+    "main.c34be2a0.js.map": "/enhanced_portfolio/static/js/main.c34be2a0.js.map",
+    "787.e44c9c25.chunk.js.map": "/enhanced_portfolio/static/js/787.e44c9c25.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67d2c7a3.css",
+    "static/js/main.c34be2a0.js"
+  ]
+}
