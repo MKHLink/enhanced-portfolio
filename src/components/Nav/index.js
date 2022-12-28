@@ -13,7 +13,7 @@ function Nav(props){
     
     return (
     <header>
-        <h1 className="mx-1">Mohammad Komol Hasan</h1>
+        <h1 className="mx-2">Mohammad Komol Hasan</h1>
 
         <ul className="flex-row">
             <li className="mx-2">
