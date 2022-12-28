@@ -10,6 +10,7 @@ import Database from "../../Assets/ProjectsPic/database.jpg";
 import Manager from "../../Assets/ProjectsPic/manager.png";
 import Stock from "../../Assets/ProjectsPic/stock.jpg";
 
+//all images are imported and bootstarp is used to set up a mobile responsive grid for the projects
 function Portfolio(){
     return(
         <section>

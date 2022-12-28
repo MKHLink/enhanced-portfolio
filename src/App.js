@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 
 function App() {
 
+  //states to switch between the components
   const [contactSelected, setContactSelected] = useState(false);
   const [resumeSelected, setResumeSelected] = useState(false);
   const [portSelected, setPortSelected] = useState(false);

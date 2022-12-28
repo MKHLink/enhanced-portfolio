@@ -1,5 +1,6 @@
 import React from "react";
 
+//props are passed down in nav from App.js and sets the value of the correspondiing states true or falses depending on the onClick function
 function Nav(props){
     
     const {

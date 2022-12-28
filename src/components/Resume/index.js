@@ -1,5 +1,6 @@
 import React from "react";
 
+//h5 has a google drive link to resume
 function Resume(){
     return(
         <section>

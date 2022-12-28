@@ -1,6 +1,7 @@
 import React from "react";
 import PFP from "../../Assets/ProfilePic/PFP.jpg";
 
+//holds the profile picture and a shor self summery
 function About(){
     return(
         <section className="my-5">

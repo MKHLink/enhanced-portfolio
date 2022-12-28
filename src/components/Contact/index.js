@@ -1,6 +1,8 @@
 import React,{useState} from "react";
 import {validateEmail} from "../../utils/helpers";
 
+//the function handleChange makes use of the declared states to validate data in the form and trigger when the user takes curson off the input fields
+//multiple br in the bottom to keep footer adjusted at the bottom of the page
 function Contact(){
     
     const [errorMessage, setErrorMessage] = useState('');

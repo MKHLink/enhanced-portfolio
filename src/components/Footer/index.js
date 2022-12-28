@@ -1,5 +1,6 @@
 import React from "react";
 
+//a simple footer that holds link to github and linkedin
 function Footer(){
     return(
         <footer>
