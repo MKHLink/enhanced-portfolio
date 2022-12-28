@@ -20,11 +20,11 @@ function Nav(props){
                 <a href="#about" onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(false)}}>About Me</a>
             </li>
 
-            <li className={`mx-2${portSelected && 'navActive'}`}>
+            <li className={`mx-2 ${portSelected && 'navActive'}`}>
                 <span onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(true)}}>Portfolio</span>
             </li>
 
-            <li className={`mx-2${resumeSelected && 'navActive'}`}>
+            <li className={`mx-2 ${resumeSelected && 'navActive'}`}>
                 <span onClick={()=>{setResumeSelected(true); setContactSelected(false);setPortSelected(false)}}>Resume</span>
             </li>
 
