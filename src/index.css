@@ -101,6 +101,16 @@ header a {
   color: rgb(192, 183, 183);
 }
 
+footer{
+  background: #176087;
+  color:rgb(192, 183, 183) ;
+  position: absolute;
+  right: 0;
+  margin-top: 20vh;
+  left: 0;
+  padding: 1rem;
+}
+
 button {
   font-size: 1rem;
   text-decoration: none;

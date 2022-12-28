@@ -37,7 +37,6 @@ function Contact(){
                     <label htmlFor="name">Name: </label>
                     <input type="text" name="name" defaultValue={name} onBlur={handleChange}/>
                 </div>
-                
                 <div>
                     <label htmlFor="email">Email: </label>
                     <input type="text" name="email" defaultValue={email} onBlur={handleChange}/>
@@ -53,6 +52,11 @@ function Contact(){
                 )}
 
                 <button type="submit">Submit</button>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </form>
         </section>
     );

@@ -4,6 +4,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 import Portfolio from "./components/Portfolio";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <></>
         )}
 
+        <Footer></Footer>
 
       </main>
     </div>
