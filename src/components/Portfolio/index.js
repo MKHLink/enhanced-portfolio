@@ -9,6 +9,7 @@ import Customer from "../../Assets/ProjectsPic/customer.jpg";
 import Database from "../../Assets/ProjectsPic/database.jpg";
 import Manager from "../../Assets/ProjectsPic/manager.png";
 import Stock from "../../Assets/ProjectsPic/stock.jpg";
+import Fitness from '../../Assets/ProjectsPic/myfitness.png';
 
 //all images are imported and bootstarp is used to set up a mobile responsive grid for the projects
 function Portfolio(){
@@ -26,6 +27,20 @@ function Portfolio(){
                     </a>
                     </Col>
                 </Row>
+                <Row>
+                    <Col>
+                    <a href="https://github.com/bsovic23/just-do-it" target="_blank" rel="noreferrer">
+                    <img src ={Fitness} alt="login-page"/>
+                    <h3>Workout Finder
+                    <br />
+                    Node JS, Express JS, MongoDB, React JS
+                    </h3>
+                    <a href="https://workout-finder.herokuapp.com/" target="_blank" rel="noreferrer">Demo</a>
+                    </a>
+                    </Col>
+                </Row>
+
+                <br/>
                 <Row>
                     <Col xs={6} md={4} lg={2} xl={2}>
                         <a href="https://github.com/MKHLink/Office_task_tracker" target="_blank" rel="noreferrer">
