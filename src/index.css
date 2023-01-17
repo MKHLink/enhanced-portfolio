@@ -90,25 +90,12 @@ a:hover {
   text-decoration: underline;
 }
 
-header {
-  background: #176087;
-  margin-bottom: 5px; 
-  padding-bottom: 1px ;
-  border-bottom: 5px;
-}
-
-header a {
-  color: rgb(192, 183, 183);
-}
 
 footer{
-  background: #176087;
-  color:rgb(192, 183, 183) ;
+  width: 100%;
   position: fixed;
   right: 0;
   bottom: 0;
-  left: 0;
-  padding: 1rem;
 }
 
 button {
@@ -310,4 +297,15 @@ a {
 
 .contact{
   color: #176087;
+}
+
+.navbar > .container {
+  max-width: 100%;
+  margin: 5px;
+  padding: 0;
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
 }

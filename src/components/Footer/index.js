@@ -1,9 +1,16 @@
 import React from "react";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+
 
 function Footer(){
     return(
         <footer>
-            <a href="https://github.com/MKHLink" target="_blank" rel="noreferrer"><span className="mx-2">GitHub</span></a>
+        <Navbar bg="dark" variant="dark">
+            <Container>
+                <Navbar.Brand href="https://github.com/MKHLink" target="_blank" rel="noreferrer">GitHub</Navbar.Brand>
+            </Container>
+        </Navbar>
         </footer>
     );
 }

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/card';
 
-function Nav(props){
+function Navigation(props){
     
     const {
         contactSelected,
@@ -21,27 +23,30 @@ function Nav(props){
     
     return (
     <header>
-        <h1 className="mx-2">Mohammad Komol Hasan</h1>
-
-        <ul className="flex-row">
-            <li className="mx-2">
-                <a href="#about" onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(false)}}>About Me</a>
-            </li>
-
-            <li className={`mx-2 ${portSelected && 'navActive'}`}>
+        <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand>Mohammad Komol Hasan</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#about" onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(false)}}>About Me</Nav.Link>
+            <Nav.Link ><li className={`mx-2 ${portSelected && 'navActive'}`}>
                 <span onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(true)}}>Portfolio</span>
-            </li>
+                </li>
+            </Nav.Link>
+            <Nav.Link>
+                <li className={`mx-2 ${resumeSelected && 'navActive'}`}>
+                    <span onClick={()=>{setResumeSelected(true); setContactSelected(false);setPortSelected(false)}}>Resume</span>
+                </li>
+            </Nav.Link>
+            <Nav.Link>
+                <li className={`mx-2 ${contactSelected && 'navActive'}`}>
+                    <span onClick={handleShow}>Contact Me</span>
+                </li>
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
 
-            <li className={`mx-2 ${resumeSelected && 'navActive'}`}>
-                <span onClick={()=>{setResumeSelected(true); setContactSelected(false);setPortSelected(false)}}>Resume</span>
-            </li>
-
-            <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-                <span onClick={handleShow}>Contact Me</span>
-            </li>
-        </ul>
-
-        <Modal className='contact' show={show} onHide={handleClose}>
+        <Modal className='cards' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Contact Links</Modal.Title>
         </Modal.Header>
@@ -58,4 +63,4 @@ function Nav(props){
     );
 }
 
-export default Nav;
+export default  Navigation;

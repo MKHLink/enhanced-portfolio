@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import Nav from "./components/Nav";
+import  Navigation from "./components/Nav";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
@@ -14,14 +14,14 @@ function App() {
 
   return (
     <div>
-      <Nav
+      < Navigation
         contactSelected = {contactSelected}
         setContactSelected = {setContactSelected}
         resumeSelected = {resumeSelected}
         setResumeSelected = {setResumeSelected}
         portSelected = {portSelected}
         setPortSelected = {setPortSelected}
-      ></Nav>
+      ></ Navigation>
       <main>
         {!contactSelected && !resumeSelected && !portSelected?(
           <>
