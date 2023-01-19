@@ -66,7 +66,7 @@ function Portfolio(){
                     <br/>Worked on the frontend using handlebars.js and made it interactable</p> 
                     <span>
                         <a href="https://github.com/MKHLink/Office_task_tracker" target="_blank" rel="noreferrer">GitHub</a>
-                        <a href="https://mkhlink.github.io/Find_Your_Pet/" target="_blank" rel="noreferrer">Demo</a>
+                        <a href="https://onlytasks.herokuapp.com/login" target="_blank" rel="noreferrer">Demo</a>
                     </span>
                 </Carousel.Caption>
             </Carousel.Item>
