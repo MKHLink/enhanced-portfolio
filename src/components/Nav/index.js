@@ -48,9 +48,10 @@ function Navigation(props){
 
         <Modal className='cards' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Contact Links</Modal.Title>
+          <Modal.Title>Have a question?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Thank you for taking the time to look at my portfolio, you can contact me via the links below.</Modal.Body>
+        <Modal.Body>Let's get to know each other. How can I be useful to your service?
+Please feel free to reach out to me. I would be delighted to answer all your questions or concerns.</Modal.Body>
         <Modal.Footer style={{
           display: "flex",
           justifyContent: "center",
