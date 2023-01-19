@@ -208,6 +208,8 @@ textarea {
 .my-5 {
   margin-top: var(--spacing-five);
   margin-bottom: var(--spacing-five);
+  text-shadow: rgb(17, 15, 6) 1px 0 20px;
+  font-size: large;
 }
 
 .px-1 {
@@ -309,3 +311,19 @@ a {
   margin: 0;
   padding: 0;
 }
+
+#carImg{
+  height: 600px;
+  width: 400px;
+  opacity: 0.5;
+}
+
+.caro h2,h3,p,a{
+  text-shadow: rgb(0, 0, 0) 1px 0 15px;
+  font-size: x-large;
+}
+
+.navi span{
+  text-shadow: rgb(242, 239, 239) 1px 0 8px;
+}
+

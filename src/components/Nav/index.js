@@ -23,11 +23,11 @@ function Navigation(props){
     
     return (
     <header>
-        <Navbar bg="dark" variant="dark">
+        <Navbar className='navi' bg="dark" variant="dark">
         <Container>
           <Navbar.Brand>Mohammad Komol Hasan</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#about" onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(false)}}>About Me</Nav.Link>
+            <Nav.Link href="#about" onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(false)}}><span>About Me</span></Nav.Link>
             <Nav.Link ><li className={`mx-2 ${portSelected && 'navActive'}`}>
                 <span onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(true)}}>Portfolio</span>
                 </li>
