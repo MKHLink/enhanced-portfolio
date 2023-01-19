@@ -1,11 +1,17 @@
 import React from "react";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+
 
 //a simple footer that holds link to github and linkedin
 function Footer(){
     return(
         <footer>
-            <a href="https://github.com/MKHLink" target="_blank" rel="noreferrer"><span className="mx-2">GitHub</span></a>
-            <a href="https://www.linkedin.com/in/likhonhasan312" target="_blank" rel="noreferrer"><span className="mx-2">Linkedin</span></a>
+        <Navbar bg="dark" variant="dark">
+            <Container>
+                <Navbar.Brand href="https://github.com/MKHLink" target="_blank" rel="noreferrer">GitHub</Navbar.Brand>
+            </Container>
+        </Navbar>
         </footer>
     );
 }
