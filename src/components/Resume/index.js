@@ -4,7 +4,7 @@ import React from "react";
 function Resume(){
     return(
         <section>
-            <h5>Download my resume <span><a href="https://docs.google.com/document/d/1NT-G4UdPTUUJC16z-e4me-oGSetUAqcx/edit?usp=sharing&ouid=110199622007239098451&rtpof=true&sd=true"
+            <h5>Download my resume <span><a href="https://drive.google.com/file/d/1UI-xn-fqss6I0N4AO-GjxH-R7aN6Kf_V/view?usp=sharing"
             target="_blank" rel="noreferrer">here</a></span></h5>
             <br />
             <br />

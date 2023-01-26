@@ -1,18 +1,18 @@
 import React from "react";
 import PFP from "../../Assets/ProfilePic/PFP.jpg";
-import Image from 'react-bootstrap/Image'
+import {Row, Col} from 'react-bootstrap';
 import Figure from 'react-bootstrap/Figure';
 
 //holds the profile picture and a shor self summery
 function About(){
     return(
         <section className="my-5">
-            
-
-            <Figure>
-      <Figure.Image className="my-2" src={PFP} style={{width:"35%"}} rounded alt="profile-pic"/>
-      <Figure.Caption className="my-5">
-        Full Stack dveloper with passion for MERN stack applictions and back end development<br />
+            <Row>
+                <Col xs={12}>
+                <Figure>
+            <Figure.Image className="my-2" src={PFP} style={{width:"35%"}} rounded alt="profile-pic"/>
+            <Figure.Caption className="my-5">
+            Full Stack dveloper with passion for MERN stack applictions and back end development<br />
                 <br/>
                 Achived Full Stack Certificate from Columbia Engineering
                 <br/>
@@ -27,6 +27,8 @@ function About(){
             
       </Figure.Caption>
     </Figure>
+                </Col>
+            </Row>
         </section>
     );
 }

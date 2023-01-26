@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/card';
+import {Row, Col} from 'react-bootstrap';
 
 function Navigation(props){
     
@@ -23,9 +24,12 @@ function Navigation(props){
     
     return (
     <header>
-        <Navbar className='navi' bg="dark" variant="dark">
+
+          <Navbar className='navi' bg="dark" variant="dark">
         <Container>
+         
           <Navbar.Brand>Mohammad Komol Hasan</Navbar.Brand>
+  
           <Nav className="me-auto">
             <Nav.Link href="#about" onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(false)}}><span>About Me</span></Nav.Link>
             <Nav.Link ><li className={`mx-2 ${portSelected && 'navActive'}`}>
@@ -45,13 +49,16 @@ function Navigation(props){
           </Nav>
         </Container>
       </Navbar>
+         
 
-        <Modal className='cards' show={show} onHide={handleClose}>
+        <Row>
+          <Col xs={8}>
+          <Modal className='cards' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Have a question?</Modal.Title>
         </Modal.Header>
         <Modal.Body>Let's get to know each other. How can I be useful to your service?
-Please feel free to reach out to me. I would be delighted to answer all your questions or concerns.</Modal.Body>
+          Please feel free to reach out to me. I would be delighted to answer all your questions or concerns.</Modal.Body>
         <Modal.Footer style={{
           display: "flex",
           justifyContent: "center",
@@ -60,6 +67,8 @@ Please feel free to reach out to me. I would be delighted to answer all your que
             <Card.Link href="https://www.linkedin.com/in/likhonhasan312/"  centered target="_blank" rel="noreferrer">LinkedIn</Card.Link>
         </Modal.Footer>
       </Modal>
+          </Col>
+        </Row>
     </header>
     );
 }
