@@ -30,7 +30,7 @@ A webpage that showcases a portion of my portfolio and can be used to get in con
 https://mkhlink.github.io/enhanced-portfolio/
 
 ## Contribution
-Mohammad Komol Hasan
+Linkhon Hasan
 
 ## Questions
 GitHub: MKHLink

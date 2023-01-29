@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from 'react-bootstrap/Carousel';
+
 
 import Calculator from "../../Assets/ProjectsPic/calculator.jpg";
 import Manager from "../../Assets/ProjectsPic/manager.png";
@@ -12,7 +12,7 @@ import {SiJavascript,SiHtml5,SiCsswizardry,SiTailwindcss,SiNodedotjs,
 import {TbApi} from 'react-icons/tb';
 
 import { Card, CardBody, CardFooter, Image,
-        Stack, Heading, Text, Button } from '@chakra-ui/react'
+        Stack, Heading, Text} from '@chakra-ui/react'
 
 function Portfolio(){
     return(

@@ -101,6 +101,11 @@ body {
     .about{
       padding-left: 12px;
     }
+
+    .resume{
+      padding-left: 20px;
+    }
+
     .about p{
      font-size: small;
     }
