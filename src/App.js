@@ -1,48 +1,59 @@
 import React,{useState} from "react";
 import  Navigation from "./components/Nav";
 import About from "./components/About";
-import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 import Portfolio from "./components/Portfolio";
-import Footer from "./components/Footer";
+
+
+import { Box } from "@chakra-ui/react";
+import { Col, Row } from 'antd';
 
 function App() {
 
-  //states to switch between the components
-  const [contactSelected, setContactSelected] = useState(false);
   const [resumeSelected, setResumeSelected] = useState(false);
   const [portSelected, setPortSelected] = useState(false);
 
   return (
-    <div>
-      < Navigation
-        contactSelected = {contactSelected}
-        setContactSelected = {setContactSelected}
+    <Box style={{overflow:'auto'}} w='100%' h='100vh' bgGradient='linear(to-l, #7928CA, #FF0080)'>
+      <header>Linkhon Hasan</header>
+      <Row>
+        <Col flex="1 0 25%">
+        <Navigation
         resumeSelected = {resumeSelected}
         setResumeSelected = {setResumeSelected}
         portSelected = {portSelected}
         setPortSelected = {setPortSelected}
       ></ Navigation>
-      <main>
-        {!contactSelected && !resumeSelected && !portSelected?(
+        </Col>
+
+        <Col flex="1 0 75%">
+        <div>
+        {!resumeSelected && !portSelected?(
           <>
             <About></About>
           </>
-        ):contactSelected && !resumeSelected && !portSelected?(
-          <><Contact></Contact></>
-        ):resumeSelected && !contactSelected && !portSelected?(
+        ):resumeSelected  && !portSelected?(
           <><Resume></Resume></>
-        ):portSelected && !contactSelected && !resumeSelected?(
+        ):portSelected && !resumeSelected?(
         <><Portfolio></Portfolio></>
         ):(
           <></>
         )}
+        </div>
+        </Col>
+      </Row>
+      
+        <footer>
+            <Box className="gitHub">
+              <a  href="https://github.com/MKHLink" target="_blank" rel="noreferrer">GitHub</a>
+            </Box>
+          </footer>
 
-        <Footer></Footer>
-
-      </main>
-    </div>
+    </Box>
   );
 }
 
 export default App;
+
+
+      

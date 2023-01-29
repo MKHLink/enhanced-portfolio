@@ -3,7 +3,7 @@ import React from "react";
 //h5 has a google drive link to resume
 function Resume(){
     return(
-        <section>
+        <section className="resume">
             <h5>Download my resume <span><a href="https://drive.google.com/file/d/1UI-xn-fqss6I0N4AO-GjxH-R7aN6Kf_V/view?usp=sharing"
             target="_blank" rel="noreferrer">here</a></span></h5>
             <br />

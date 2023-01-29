@@ -1,21 +1,30 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/card';
-import {Row, Col} from 'react-bootstrap';
+
+
+import {
+  UserOutlined,
+  ContainerOutlined,
+  MenuFoldOutlined,
+  DesktopOutlined,
+  MenuUnfoldOutlined,
+  MailOutlined 
+} from '@ant-design/icons';
+import { Button, Menu } from 'antd';
+
 
 function Navigation(props){
     
     const {
-        contactSelected,
-        setContactSelected,
-        resumeSelected,
         setResumeSelected,
-        portSelected,
         setPortSelected
         } = props;
+
+        const [collapsed, setCollapsed] = useState(false);
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
 
         const [show, setShow] = useState(false);
 
@@ -23,37 +32,54 @@ function Navigation(props){
         const handleShow = () => setShow(true);
     
     return (
-    <header>
+      <div
+      style={{
+        width: 256,
+      }}
+    >
+      <Button
+        type="primary"
+        onClick={toggleCollapsed}
+        style={{
+          marginBottom: 16,
+          marginTop: 20
+        }}
+      >
+        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+      </Button>
+      <Menu
+        defaultSelectedKeys={['1']}
+        defaultOpenKeys={['sub1']}
+        mode="inline"
+        theme="dark"
+        inlineCollapsed={collapsed}
+      >
+        <Menu.Item key="1" 
+        onClick={()=>{ setResumeSelected(false);setPortSelected(false)}}>
+          <UserOutlined />
+          <span >About Me</span>
+        </Menu.Item>
 
-          <Navbar className='navi' bg="dark" variant="dark">
-        <Container>
-         
-          <Navbar.Brand>Mohammad Komol Hasan</Navbar.Brand>
-  
-          <Nav className="me-auto">
-            <Nav.Link href="#about" onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(false)}}><span>About Me</span></Nav.Link>
-            <Nav.Link ><li className={`mx-2 ${portSelected && 'navActive'}`}>
-                <span onClick={()=>{setContactSelected(false); setResumeSelected(false);setPortSelected(true)}}>Portfolio</span>
-                </li>
-            </Nav.Link>
-            <Nav.Link>
-                <li className={`mx-2 ${resumeSelected && 'navActive'}`}>
-                    <span onClick={()=>{setResumeSelected(true); setContactSelected(false);setPortSelected(false)}}>Resume</span>
-                </li>
-            </Nav.Link>
-            <Nav.Link>
-                <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-                    <span onClick={handleShow}>Contact Me</span>
-                </li>
-            </Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-         
+        <Menu.Item key="2" 
+        onClick={()=>{ setResumeSelected(false);setPortSelected(true)}}>
+          <DesktopOutlined />
+          <span >Portfolio</span>
+        </Menu.Item>
 
-        <Row>
-          <Col xs={8}>
-          <Modal className='cards' show={show} onHide={handleClose}>
+        <Menu.Item key="3" 
+        onClick={()=>{ setResumeSelected(true);setPortSelected(false)}}>
+          <ContainerOutlined />
+          <span >Resume</span>
+        </Menu.Item>
+
+        <Menu.Item key="4" 
+        onClick={handleShow}>
+          <MailOutlined  />
+          <span >Contact Me</span>
+        </Menu.Item>
+      </Menu>
+
+      <Modal className='cards' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Have a question?</Modal.Title>
         </Modal.Header>
@@ -63,14 +89,13 @@ function Navigation(props){
           display: "flex",
           justifyContent: "center",
         }}>
-            <Card.Link href="mailto: likhon.hasan312@gmail.com" centered>Email</Card.Link>
-            <Card.Link href="https://www.linkedin.com/in/likhonhasan312/"  centered target="_blank" rel="noreferrer">LinkedIn</Card.Link>
+            <Card.Link className="links" href="mailto: hasanlinkhon@gmail.com" centered>Email</Card.Link>
+            <Card.Link className="links" href="https://www.linkedin.com/in/likhonhasan312/"  centered target="_blank" rel="noreferrer">LinkedIn</Card.Link>
         </Modal.Footer>
       </Modal>
-          </Col>
-        </Row>
-    </header>
+    </div>
     );
 }
 
 export default  Navigation;
+
