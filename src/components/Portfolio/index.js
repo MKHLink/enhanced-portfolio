@@ -1,196 +1,97 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Box, Spinner, SimpleGrid } from "@chakra-ui/react";
+import { Card, CardBody, CardFooter, Image, Stack, Heading, Text } from '@chakra-ui/react';
 
 
-import Calculator from "../../Assets/ProjectsPic/calculator.jpg";
-import Manager from "../../Assets/ProjectsPic/manager.png";
-import Stock from "../../Assets/ProjectsPic/stock.png";
-import Fitness from "../../Assets/ProjectsPic/myfitness.png";
+const repoIdsToShow = ["589136807", "561504083", "728958589","534423498","523855834","584873557","578743255"]; 
 
-import {SiJavascript,SiHtml5,SiCsswizardry,SiTailwindcss,SiNodedotjs,
-        SiHandlebarsdotjs,SiSequelize,SiExpress, SiJava,SiReact,
-        SiMongodb,SiApollographql, SiJsonwebtokens} from 'react-icons/si';
-import {TbApi} from 'react-icons/tb';
+function Portfolio() {
+  const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-import { Card, CardBody, CardFooter, Image,
-        Stack, Heading, Text} from '@chakra-ui/react'
-
-function Portfolio(){
-    return(
-        <main>
-        <Card style={{
-          marginBottom: 16,
-          marginTop: 20
-        }}
-        direction={{ base: 'column', sm: 'row' }}
-        overflow='hidden'
-        variant='outline'
-      >
-        <Image
-          objectFit='cover'
-          maxW={{ base: '100%', sm: '300px' }}
-          src={Stock}
-          alt='Petfinder'
-        />
-      
-        <Stack>
-          <CardBody>
-            <Heading size='md'>PetFinder</Heading>
-
-            <Text py='2'>
-              
-            <SiJavascript/>JavaScript<SiHtml5/>HTML<SiCsswizardry/>CSS <SiTailwindcss/>Tailwind<TbApi/>ThirdParty APIs'<br/>
-            <br/>A website users can utilize to find available pets in their surrounding area based on zip code
-            <br/>
-            <br/>
-            <span style={{fontWeight:'bold'}}>Personal Contributions:</span><br/>
-                Worked on making both the API's function within the application, and making them interact with each other.<br/>
-                Made the data from api display on page created by collaborators.
-            </Text>
-          </CardBody>
-      
-          <CardFooter>
-          <span>
-                        <a style={{fontSize:'large'}} className="links" href="https://github.com/MKHLink/Find_Your_Pet" target="_blank" rel="noreferrer">GitHub</a>
-                        <a style={{fontSize:'large',paddingLeft:20}} className="links" href="https://mkhlink.github.io/Find_Your_Pet/" target="_blank" rel="noreferrer">Demo</a>
-                    </span>
-          </CardFooter>
-        </Stack>
-      </Card>
-
-      <Card style={{
-          marginBottom: 16,
-          marginTop: 20
-        }}
-        direction={{ base: 'column', sm: 'row' }}
-        overflow='hidden'
-        variant='outline'
-      >
+  useEffect(() => {
+    const fetchRepos = async () => {
+      try {
+        const response = await fetch("https://api.github.com/users/MKHLink/repos?per_page=100");
+        const data = await response.json();
+  
+        let nextPage = 2;
+        while (response.headers.get("Link") && nextPage <= 10) { 
+          const nextPageResponse = await fetch(`https://api.github.com/users/MKHLink/repos?per_page=100&page=${nextPage}`);
+          const nextPageData = await nextPageResponse.json();
+          data.push(...nextPageData);
+          nextPage++;
+        }
         
-      
-        <Stack>
-          <CardBody>
-            <Heading size='md'>Workout Finder</Heading>
+        // console.log(data);
+        const filteredRepos = data.filter(repo => repoIdsToShow.includes(repo.id.toString()));
 
-            <Text py='2'>
-              
-            <SiNodedotjs/>NodeJS<SiReact/>ReactJS <SiMongodb/>MongoDB <SiJsonwebtokens/>JWT <SiApollographql/>Apollo Server/Client, GraphQL <SiExpress/> ExpressJS<br/>
-            <br/>A MERN stack application that gives new users and existing gym goers a sense of community when they workout. Log into to you account where you can search for different types of workouts based on workout type 
-            (abs, legs, back, chest, shoulders). Then create and log workouts to see what you’ve done in the past.
-            <br/>
-            <br/>
-            <span style={{fontWeight:'bold'}}>Personal Contributions: </span><br/>
-                    Worked on creatiing the API's for the models, made by collaboratiors, using GraphQL
-                    <br/>Worked on user authentcation via technologies such as bcrypt and json web tokens
-                    <br/>Worked on making use of Apollo Server in the back end
-                    <br/>Made queries and mutations work in the front end made by collaborators
-            </Text>
-          </CardBody>
-      
-          <CardFooter>
-          <span>
-                        <a style={{fontSize:'large'}} className="links" href="https://github.com/MKHLink/just-do-it" target="_blank" rel="noreferrer">GitHub</a>
-                        <a style={{fontSize:'large',paddingLeft:20}} className="links" href="https://workout-finder.herokuapp.com/" target="_blank" rel="noreferrer">Demo</a>
-                    </span>
-          </CardFooter>
-        </Stack>
+        setRepos(filteredRepos);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching GitHub repositories:", error);
+      }
+    };
+  
+    fetchRepos();
+  }, []);
+  
 
-        <Image
-          objectFit='cover'
-         
-          maxW={{ base: '100%', sm: '600px' }}
-          src={Fitness}
-          alt='Fitness'
-        />
-      </Card>
+  return (
+    <main>
+      {loading ? (
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="500px"
+        >
+          <Spinner size="xl" />
+        </Box>
+      ) : (
+        <Box  display="flex"
+        justifyContent="center"
+        marginTop="20px"
+        marginRight="20px"
+        alignItems="center"
+        >
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
+        <Card style={{ overflow: 'hidden' }} variant='outline'>
+        <CardBody>
+                  <Heading size='md'>Twitter Api</Heading>
+                  <Text py='2'>A web application made with Java, SpringBoot and PostgreSQL that works with HTTP requests and provies CRUD functionality for a Twiter Application </Text>
+                  <Text py='2'>Made with: Java </Text>
+                </CardBody>
+                <CardFooter>
+                  <span>
+                    <a style={{ fontSize: 'large' }} className="links" href="https://github.com/fasttrackd-student-work/spring-assessment-social-media-sprint-10-2023-team-5" target="_blank" rel="noreferrer">GitHub</a>
+          
+                  </span>
+                </CardFooter>
+        </Card>
 
-      <Card style={{
-          marginBottom: 16,
-          marginTop: 20
-        }}
-        direction={{ base: 'column', sm: 'row' }}
-        overflow='hidden'
-        variant='outline'
-      >
-        <Image
-          objectFit='cover'
-          maxW={{ base: '100%', sm: '500px' }}
-          src={Manager}
-          alt='Dashboard'
-        />
-      
-        <Stack>
-          <CardBody>
-            <Heading size='md'>OnlyTasks</Heading>
-
-            <Text py='2'>
-              
-            <SiNodedotjs/>NodeJS <SiHandlebarsdotjs/>HandlebarsJS <SiSequelize/>Sequelize <SiExpress/>ExpressJS
-            <br/>A task tracking website that can be used to create and keep track of tasks
-            <br/>
-            <br/>
-            <span style={{fontWeight:'bold'}}>Personal Contributions:</span><br/>
-            <br/>Created the back end mySQL schemas 
-                    <br/>Worked on the routing and controllers from backend and frontend APIs'
-                    <br/>Made use of bcrypt for user authentication and sessions to keep track of logged in users
-                    <br/>Worked on the frontend using handlebars.js and made it interactable
-            </Text>
-          </CardBody>
-      
-          <CardFooter>
-          <span>
-                        <a style={{fontSize:'large'}} className="links" href="https://github.com/MKHLink/Office_task_tracker" target="_blank" rel="noreferrer">GitHub</a>
-                        <a style={{fontSize:'large',paddingLeft:20}} className="links" href="https://onlytasks.herokuapp.com/login" target="_blank" rel="noreferrer">Demo</a>
-                    </span>
-          </CardFooter>
-        </Stack>
-      </Card>
-
-      <Card style={{
-          marginBottom: 16,
-          marginTop: 20
-        }}
-        direction={{ base: 'column', sm: 'row' }}
-        overflow='hidden'
-        variant='outline'
-      >
-        
-      
-        <Stack>
-          <CardBody>
-            <Heading size='md'>Calculator App</Heading>
-
-            <Text py='2'>
-              
-            <SiJava/>Java
-            <br/>A calculator application that makes use of GUI and is able to perform simple arithmatic operations
-            <br/>
-            <br/>
-            <span style={{fontWeight:'bold'}}>A passion project made while self teaching JAVA </span><br/>
-                   
-            </Text>
-          </CardBody>
-      
-          <CardFooter>
-                <span>
-                    <a style={{fontSize:'large'}} className="links" href="https://github.com/MKHLink/Calculator_With_GUI" target="_blank" rel="noreferrer">GitHub</a>
-                </span>
-          </CardFooter>
-        </Stack>
-
-        <Image
-          objectFit='cover'
-         
-          maxW={{ base: '100%', sm: '300px' }}
-          src={Calculator}
-          alt='Calculator'
-        />
-      </Card>
-
-
-
-        </main>
-    );
+          {repos.map((repo) => (
+            <Card key={repo.id} style={{ overflow: 'hidden' }} variant='outline'>
+              <Stack>
+                <CardBody>
+                  <Heading size='md'>{repo.name}</Heading>
+                  <Text py='2'>{repo.description}</Text>
+                  <Text py='2'>Made with: {repo.language}</Text>
+                </CardBody>
+                <CardFooter>
+                  <span>
+                    <a style={{ fontSize: 'large' }} className="links" href={repo.html_url} target="_blank" rel="noreferrer">GitHub</a>
+          
+                  </span>
+                </CardFooter>
+              </Stack>
+            </Card>
+          ))}
+        </SimpleGrid>
+        </Box>
+      )}
+    </main>
+  );
 }
 
 export default Portfolio;
-

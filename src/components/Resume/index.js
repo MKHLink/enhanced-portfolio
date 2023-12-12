@@ -1,40 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import { Box, Spinner } from "@chakra-ui/react";
+import { Button, ButtonGroup } from '@chakra-ui/react'
 
-//h5 has a google drive link to resume
-function Resume(){
-    return(
-        <section className="resume">
-            <h5>Download my resume <span><a href="https://drive.google.com/file/d/1UI-xn-fqss6I0N4AO-GjxH-R7aN6Kf_V/view?usp=sharing"
-            target="_blank" rel="noreferrer">here</a></span></h5>
+function Resume() {
+  const [loading, setLoading] = useState(true);
+
+  const handleResumeLoad = () => {
+    setLoading(false);
+  };
+
+  return (
+    <section className="resume">
+      <a
+        href="https://drive.google.com/file/d/1l1gb2WVh2Jx2b4KcJq4JyPP_FwGHcOw_/preview"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+    <Button colorScheme='teal' variant='solid' margin="10px">
+    Download
+  </Button>
+  </a>
             <br />
-            <br />
 
-            <h2>Back-End Profeciencies</h2>
-            <ul>
-                <li>Node JS</li>
-                <li>Express JS</li>
-                <li>MySQL</li>
-                <li>MongoDB</li>
-                <li>Sequelize</li>
-            </ul>
-
-            <h2>Front-End Profeciencies</h2>
-            <ul>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Handlebars</li>
-            </ul>
-
-            <h2>Other Languages</h2>
-            <ul>
-                <li>C++</li>
-                <li>Java</li>
-                <li>Python</li>
-            </ul>
-        </section>
-    );
+      {loading ? (
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="500px"
+        >
+          <Spinner size="xl" />
+        </Box>
+      ) : null}
+      <div style={{ width: "70%", height: "100vh", display: loading ? "none" : "block" }}>
+        <iframe
+          title="Resume"
+          src="https://drive.google.com/file/d/1l1gb2WVh2Jx2b4KcJq4JyPP_FwGHcOw_/preview"
+          width="100%"
+          height="100%"
+          onLoad={handleResumeLoad}
+        ></iframe>
+      </div>
+    </section>
+  );
 }
 
 export default Resume;

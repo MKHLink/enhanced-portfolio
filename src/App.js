@@ -14,8 +14,8 @@ function App() {
   const [portSelected, setPortSelected] = useState(false);
 
   return (
-    <Box style={{overflow:'auto'}} w='100%' h='100vh' bgGradient='linear(to-l, #7928CA, #FF0080)'>
-      <header>Linkhon Hasan</header>
+    <Box style={{overflow:'auto'}} w='100%' h='100vh' bgGradient='linear(to-r, gray.600, blue.900)'>
+     
       <Row>
         <Col flex="1 0 25%">
         <Navigation
