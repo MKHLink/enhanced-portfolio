@@ -33,16 +33,16 @@ function About(){
         <Box p="4" maxW="800px">
         <SimpleGrid columns={1} spacing={4}>
           <Text fontSize="xl" textAlign="justify">
-            Linkhon Hasan is a software developer with a passion for programming. His love for coding started in high school, and he decided to pursue software development as a career.
+          Linkhon Hasan is a passionate software developer with a strong foundation in programming, honed through a bachelor’s degree in computer science, a Full Stack Development certificate from Columbia University, and the FastTrack program at Cook Systems.
           </Text>
           <Text fontSize="xl" textAlign="justify">
-            He is a graduate of the FastTrack program from Cook Systems and holds a bachelor’s degree in computer science, as well as a Full Stack Development certificate from Columbia University.
+          Currently working as a Full Stack Developer at FedEx, he has enhanced backend performance by optimizing Java Spring Boot applications, designing Angular-based UIs, and implementing Spring Boot REST APIs, which improved user satisfaction and operational efficiency.
           </Text>
           <Text fontSize="xl" textAlign="justify">
-            Linkhon has worked in multiple diverse teams upon graduation, such as startups and established companies. He gained hands-on experience with Spring Boot at FastTrack, which further solidified his love and resolve for backend programming and the Java language itself.
+          His expertise extends to building CI/CD pipelines with Jenkins and GitHub Actions, automating deployments, and securing seamless cloud-based operations. Linkhon’s contributions include developing robust integration tests with JUnit and Mockito, reducing production incidents, and optimizing SQL databases to streamline operations. 
           </Text>
           <Text fontSize="xl" textAlign="justify">
-            He possesses an optimistic and easy-to-get-along characteristic, which adds to the productivity of a team. Linkhon brings along analytical problem-solving skills and a can-do attitude to any project he is a part of.
+          Known for his collaborative nature, he mentors peers, conducts code reviews, and fosters team productivity, bringing analytical problem-solving skills and a can-do attitude to every project.
           </Text>
         </SimpleGrid>
       </Box>

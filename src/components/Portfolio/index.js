@@ -3,7 +3,7 @@ import { Box, Spinner, SimpleGrid } from "@chakra-ui/react";
 import { Card, CardBody, CardFooter, Image, Stack, Heading, Text } from '@chakra-ui/react';
 
 
-const repoIdsToShow = ["589136807", "561504083", "728958589","534423498","523855834","584873557","578743255"]; 
+const repoIdsToShow = ["589136807", "561504083", "728958589","534423498","746826840","584873557","578743255","883791818","907060764"]; 
 
 function Portfolio() {
   const [repos, setRepos] = useState([]);
@@ -23,7 +23,7 @@ function Portfolio() {
           nextPage++;
         }
         
-        // console.log(data);
+        console.log(data);
         const filteredRepos = data.filter(repo => repoIdsToShow.includes(repo.id.toString()));
 
         setRepos(filteredRepos);

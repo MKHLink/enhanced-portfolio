@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Spinner } from "@chakra-ui/react";
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 
 function Resume() {
   const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ function Resume() {
   return (
     <section className="resume">
       <a
-        href="https://drive.google.com/file/d/1l1gb2WVh2Jx2b4KcJq4JyPP_FwGHcOw_/preview"
+        href="https://drive.google.com/uc?export=download&id=1z_64Y2-1lHhEMX6RVlKPZ6xAnJzonwek"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -35,7 +35,7 @@ function Resume() {
       <div style={{ width: "70%", height: "100vh", display: loading ? "none" : "block" }}>
         <iframe
           title="Resume"
-          src="https://drive.google.com/file/d/1l1gb2WVh2Jx2b4KcJq4JyPP_FwGHcOw_/preview"
+          src="https://drive.google.com/file/d/1z_64Y2-1lHhEMX6RVlKPZ6xAnJzonwek/preview"
           width="100%"
           height="100%"
           onLoad={handleResumeLoad}
